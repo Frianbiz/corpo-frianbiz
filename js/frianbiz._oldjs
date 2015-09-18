@@ -1,0 +1,56 @@
+$(function() {
+
+  Parse.$ = jQuery;
+
+  // Initialize Parse with your Parse application javascript keys
+  Parse.initialize( "jbSC7AqKbDKgR5zHfabelrA3sfFg0DKK7lDcidRE",
+                    "AxwZCtok73KItrQdo7eCXUI4lNzU6Alr0AVDmEvY");
+
+
+
+  var Blog = Parse.Object.extend("reference");
+
+  var Blogs = Parse.Collection.extend({
+    model: Blog
+  });
+
+
+  // The DOM element for a todo item...
+  var TodoView = Parse.View.extend({
+
+
+
+    // Cache the template function for a single item.
+    template: _.template($('#item-template').html()),
+
+    // Re-render the contents of the todo item.
+    render: function() {
+      $(this.el).html(this.template(this.model.toJSON()));
+      //this.input = this.$('.edit');
+      return this;
+    },
+
+
+  });
+
+
+
+  var blogs = new Blogs();
+
+  blogs.fetch({
+    success: function(blogs) {
+      console.log(blogs);
+
+      var view = new TodoView({model: blogs['models'][0]});
+
+      this.$(".main-container").append(view.render().el);
+
+
+    },
+    error: function(blogs, error) {
+      console.log(error);
+    }
+  });
+
+
+});

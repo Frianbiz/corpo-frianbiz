@@ -9,6 +9,16 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="robots" content="noindex">
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <script src="js/underscore.js"></script>
+
+    <script src="http://www.parsecdn.com/js/parse-1.2.13.min.js"></script>
+
+    <script src="js/frianbiz.js"></script>
+
+
 
     <title>Creative - Start Bootstrap Theme</title>
 
@@ -48,13 +58,14 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">Frianbiz</a>
+
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll" href="#about">à propos</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#services">Services</a>
@@ -75,12 +86,18 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
+                <h1>Nous réalisons des services web et des applications mobiles</h1>
 
 
+                <hr>
+                <p> Chaque jour, plus de 100 000 personnes utilisent nos produits</p>
+                <!--
                 <h1 id="digitalClock"></h1>
                 <h2>Date de livraison estimée de votre projet</h2>
+                <h4>si vous nous contactez maintenant !</h4>
                 <hr>
                 <p>Nous concevons et réalisons des applications web et mobile <strong>sur-mesure</strong> depuis 2008.</p>
+                -->
                 <a href="#about" class="btn btn-primary btn-xl page-scroll">En savoir plus</a>
             </div>
         </div>
@@ -93,8 +110,12 @@
                     <h2 class="section-heading">14 projets lançés cette année</h2>
                     <hr class="light">
                     <p class="text-faded">Nous sommes une petite équipe efficace de 7 personnes. Nous appliquons des méthodes de développement qui ont fait leurs preuves (Lean, Scrum and Extreme Programming). Nous proposons cette approche itérative à tous nos clients: Grands comptes, marques et startups.</p>
+
+
+
                     <!---<a href="#" class="btn btn-default btn-xl"></a>-->
                 </div>
+
             </div>
         </div>
     </section>
@@ -120,21 +141,21 @@
                 <div class="col-lg-4 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-paper-plane wow bounceIn text-primary" data-wow-delay=".1s"></i>
-                        <h3>Développement Mobile</h3>
-                        <p class="text-muted">You can use this theme as is, or you can make changes!</p>
+                        <h3>Multi plate-formes</h3>
+                        <p class="text-muted">bla bla ios android et full stack front/backend</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary" data-wow-delay=".2s"></i>
-                        <h3>Développement Web</h3>
-                        <p class="text-muted">We update dependencies to keep things fresh.</p>
+                        <h3>Innovation</h3>
+                        <p class="text-muted">Beacon, realité augmenté, ....</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-heart wow bounceIn text-primary" data-wow-delay=".3s"></i>
-                        <h3>Conseil/Prototypage</h3>
+                        <h3>Méthodes</h3>
                         <p class="text-muted">You have to make your websites with love these days!</p>
                     </div>
                 </div>
@@ -142,19 +163,61 @@
         </div>
     </section>
 
+
+
+
+
+    <script type="text/template" id="references-template">
+        <% _.each(references, function(ref) { %>
+        <div class="col-lg-4 col-sm-6">
+            <a href="javascript:void(0)" class="portfolio-box">
+                <img src="img/portfolio/<%= ref.image %>" class="img-responsive" alt="">
+                <div class="portfolio-box-caption">
+                    <div class="portfolio-box-caption-content">
+                        <div class="project-category text-faded">
+                            <%= ref.infos %>
+                        </div>
+                        <div class="project-name">
+                            <%= ref.title %>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <% }); %>
+    </script>
+
+
+
+
+    <section class="no-padding" id="portfolio">
+        <div class="container-fluid">
+            <div class="row no-gutter" id="view-goes-here"></div>
+        </div>
+    </section>
+
+    <br/><br/><br/><br/><br/><br/>
+
     <section class="no-padding" id="portfolio">
         <div class="container-fluid">
             <div class="row no-gutter">
+
+
+
+
+
+
+
                 <div class="col-lg-4 col-sm-6">
                     <a href="#" class="portfolio-box">
-                        <img src="img/portfolio/1.jpg" class="img-responsive" alt="">
+                        <img src="img/portfolio/avatar-ipad.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                    iPad
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    Avatar iPad
                                 </div>
                             </div>
                         </div>
@@ -162,14 +225,14 @@
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <a href="#" class="portfolio-box">
-                        <img src="img/portfolio/2.jpg" class="img-responsive" alt="">
+                        <img src="img/portfolio/geostaff.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                    Site Web & Backoffice
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    Geostaff
                                 </div>
                             </div>
                         </div>
@@ -177,14 +240,14 @@
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <a href="#" class="portfolio-box">
-                        <img src="img/portfolio/3.jpg" class="img-responsive" alt="">
+                        <img src="img/portfolio/applewatch.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                    Apple Watch
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    POC iWatch
                                 </div>
                             </div>
                         </div>
@@ -192,14 +255,14 @@
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <a href="#" class="portfolio-box">
-                        <img src="img/portfolio/4.jpg" class="img-responsive" alt="">
+                        <img src="img/portfolio/association.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                    Site Web & Backoffice
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    Association.fr
                                 </div>
                             </div>
                         </div>
@@ -207,14 +270,14 @@
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <a href="#" class="portfolio-box">
-                        <img src="img/portfolio/5.jpg" class="img-responsive" alt="">
+                        <img src="img/portfolio/cotizasso-game.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                    Site Web
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    Cotizasso Game
                                 </div>
                             </div>
                         </div>
@@ -222,14 +285,119 @@
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <a href="#" class="portfolio-box">
-                        <img src="img/portfolio/6.jpg" class="img-responsive" alt="">
+                        <img src="img/portfolio/meetup.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                    iPhone
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    Orange Meet'up
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#" class="portfolio-box">
+                        <img src="img/portfolio/cotizasso.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Web - iPhone - Android
+                                </div>
+                                <div class="project-name">
+                                    Cotizasso
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#" class="portfolio-box">
+                        <img src="img/portfolio/citroen.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    iPad
+                                </div>
+                                <div class="project-name">
+                                    Citroën Advisor
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#" class="portfolio-box">
+                        <img src="img/portfolio/sportsregions.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Web - iPhone - Android
+                                </div>
+                                <div class="project-name">
+                                    Sports Regions
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#" class="portfolio-box">
+                        <img src="img/portfolio/vinci-stock.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Backoffice
+                                </div>
+                                <div class="project-name">
+                                    Stock Vinci
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#" class="portfolio-box">
+                        <img src="img/portfolio/max.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    iPhone - Android
+                                </div>
+                                <div class="project-name">
+                                    MAX
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#" class="portfolio-box">
+                        <img src="img/portfolio/beacon.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Estimote Beacon
+                                </div>
+                                <div class="project-name">
+                                    Beacon POC
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#" class="portfolio-box">
+                        <img src="img/portfolio/shop-intelligent.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    iPhone
+                                </div>
+                                <div class="project-name">
+                                    Orange - Shop Intelligent
                                 </div>
                             </div>
                         </div>
@@ -244,6 +412,10 @@
             <div class="call-to-action">
                 <!--<h2>+ de références!</h2> -->
                 <!--<a href="#" class="btn btn-default btn-xl wow tada">+ de références!</a> -->
+                <h4 class="section-heading"><span id="digitalClock"></span></h4>
+
+
+                <p class="text-faded">Si vous nous contactez maintenant, nous estimons que votre projet sera livrée à cette date. </p>
            </div>
        </div>
    </aside>
@@ -258,18 +430,16 @@
                </div>
                <div class="col-lg-4 col-lg-offset-2 text-center">
                    <i class="fa fa-phone fa-3x wow bounceIn"></i>
-                   <p>123-456-6789</p>
+                   <p>09 72 11 30 80</p>
                </div>
                <div class="col-lg-4 text-center">
                    <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                   <p><a href="mailto:your-email@your-domain.com">contact@frianbiz.com</a></p>
+                   <p><a href="mailto:contact@frianbiz.com">contact@frianbiz.com</a></p>
                </div>
            </div>
        </div>
    </section>
 
-   <!-- jQuery -->
-    <script src="js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
@@ -290,7 +460,7 @@
     function updateWorked() {
         var date = new Date();
         date.setMonth( date.getMonth( ) + 2 );
-        var time = 'Le '+convertDate(date)+' à '+pad(date.getHours())+'h'+pad(date.getMinutes())+':'+pad(date.getSeconds());
+        var time = 'le '+convertDate(date)+' à '+pad(date.getHours())+'h'+pad(date.getMinutes())+':'+pad(date.getSeconds());
         document.getElementById('digitalClock').innerHTML = time;
         setTimeout('updateWorked()',1000);
     }
